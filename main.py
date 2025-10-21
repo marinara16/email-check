@@ -65,9 +65,9 @@ if file1 and file2:
             df_only_file1 = df1[df1['normalized_email'].isin(emails_only_file1)][['First Name', 'Last Name', 'Email']].copy()
             df_only_file2 = df2[df2['normalized_email'].isin(emails_only_file2)][['First Name', 'Last Name', 'Email']].copy()
             
-            # Sort by last name for easier reading
-            df_only_file1 = df_only_file1.sort_values(['Last Name', 'First Name']).reset_index(drop=True)
-            df_only_file2 = df_only_file2.sort_values(['Last Name', 'First Name']).reset_index(drop=True)
+            # Sort by first name for easier reading
+            df_only_file1 = df_only_file1.sort_values(['First Name', 'Last Name']).reset_index(drop=True)
+            df_only_file2 = df_only_file2.sort_values(['First Name', 'Last Name']).reset_index(drop=True)
             
             # Display results
             st.markdown("---")
@@ -128,5 +128,5 @@ else:
            - Emails only appearing in File 1 (with student names)
            - Emails only appearing in File 2 (with student names)
         5. Each section has a text area where you can easily copy the results
-        6. Results are sorted alphabetically by last name for easier reading
+        6. Results are sorted alphabetically by first name for easier reading
         """)
